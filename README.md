@@ -1,7 +1,5 @@
 # ansible-dockerfile-push-pull-via-git
 
-# Docker Image Build and Push to DockerHub using Ansible
-
 Playbook to insatll Docker and build a simple html application image from a dockerfile and then it pushed to your  Docker Hub account.
 
 ## Ansible Modules used
@@ -11,8 +9,6 @@ Playbook to insatll Docker and build a simple html application image from a dock
 - service
 - git
 - docker_image
-- docker_login
-
 
 ## How to Use
 
