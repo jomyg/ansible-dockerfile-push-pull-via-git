@@ -13,7 +13,7 @@ Playbook to insatll Docker and build a simple html application image from a dock
 ## How to Use
 
 ```
-git clone https://github.com/BetcyBabu/ansible-dockerfile-push-pull-via-git
+git clone https://github.com/jomyg/ansible-dockerfile-push-pull-via-git
 cd ansible-dockerfile-push-pull-via-git
 ansible-playbook main.yml
 ```
