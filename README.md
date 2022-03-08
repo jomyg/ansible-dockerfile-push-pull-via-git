@@ -30,7 +30,7 @@ ansible-playbook main.yml
   vars:
     git_url: "https://github.com/jomyg/docker-git.git"
     docker_username: "jomyg"
-    docker_password: "9495671831"
+    docker_password: "*********"
     image_name: jomyg/htmlapp
 
   tasks:
@@ -57,16 +57,16 @@ ansible-playbook main.yml
       git:
         repo: "{{ git_url}}"
         dest: /var/htmlapp
-      register: git_status
+      register: git_status_state
 
     - name: " Accessing into Image repo"
-      when: git_status.changed == true
+      when: git_status_state.changed == true
       docker_login:
         username: "{{ docker_username }}"
         password: "{{docker_password}}"
 
     - name: "Building the docker image via downloaded dockerfile"
-      when: git_status.changed == true
+      when: git_status_state.changed == true
       docker_image:
         build:
           path: /var/htmlapp/
@@ -76,7 +76,7 @@ ansible-playbook main.yml
         tag : "{{ item }}"
       with_items:
         - latest
-        - "{{git_status.after}}"
+        - "{{git_status_state.after}}"
       ```
 
 ```
