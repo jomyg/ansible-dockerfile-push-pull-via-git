@@ -1,0 +1,1 @@
+# ansible-dockerfile-push-pull-via-git
